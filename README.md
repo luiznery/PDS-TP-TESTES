@@ -26,7 +26,7 @@ def test_fillna(self):
     with pytest.raises(ValueError, match=msg):
         ts.fillna()
 ```
-Esse teste pretende fazer testes de comportamento no metodo fillna da classe Series. Primeiro, testa se os metodos "ffill" e "backfill" estão funcionando, respectivamente esse metodos substituem um valor invalido pelo primeiro valor valido anterior e pelo primeiro valor valido posterior. Em seguida, é testada a substituição por um valor especifico passado como parametro. E por fim, testa-se se o metodo levanta algum erro caso nenhum metodo ou valor seja passado.
+Este teste pretende fazer testes de comportamento no método fillna da classe Series. Primeiro, testa se os métodos "ffill" e "backfill" estão funcionando, respectivamente esse métodos substituem um valor invalido pelo primeiro valor válido anterior e pelo primeiro valor válido posterior. Em seguida, é testada a substituição por um valor especifico passado como parâmetro. E por fim, testa-se se o método levanta algum erro caso nenhum método ou valor seja passado.
 
 
 ## 2. Series.fillna
@@ -133,11 +133,11 @@ def test_timedelta_fillna(self, frame_or_series):
     tm.assert_equal(result, expected)
 
 ```
-No começo da função de teste se inicia um objeto Series contendo 4 valores de Timestamp, em seguida se é calculada a diferença entre eles o que gera uma Serie de Timedelta, sendo o primeiro elemento nulo. 
+No começo da função de teste se inicia um objeto Series contendo 4 valores de Timestamp, em seguida se é calculada a diferença entre eles o que gera uma Série de Timedelta, sendo o primeiro elemento nulo. 
 
-O primeiro teste é simples, objetivando verificar se o elemento nulo é trocado por um do tipo Timedelta com valor 0. Depois, testa se ao passar um valor de um tipo diferente do da Serie, o metodo lança um erro. Em seguida se repete o mesmo teste para alguns valores aumentando a complexidade: Timedelta de 1 segundo, Timedelta de 1 dia e 1 segundo, outros tipos de timedelta da biblioteca numpy e valor nulo. 
+O primeiro teste é simples, objetivando verificar se o elemento nulo é trocado por um do tipo Timedelta com valor 0. Depois, testa se ao passar um valor de um tipo diferente do da Série, o método lança um erro. Em seguida se repete o mesmo teste para alguns valores aumentando a complexidade: Timedelta de 1 segundo, Timedelta de 1 dia e 1 segundo, outros tipos de timedelta da biblioteca numpy e valor nulo. 
 
-Em seguida os metodos ffill e bfill são testados, é esperado que o primeiro, no caso dado, não faça nada pois o valor invelido é o primeiro e o segundo preencha a posição invalida com o valor da proxima posição valida.
+Em seguida os métodos ffill e bfill são testados, é esperado que o primeiro, no caso dado, não faça nada pois o valor invalido é o primeiro e o segundo preencha a posição inválida com o valor da próxima posição válida.
 
 
 ## 3. Series.value_counts
@@ -171,4 +171,4 @@ def test_value_counts_datetime(self):
     tm.assert_series_equal(ser.value_counts(normalize=True), exp)
     tm.assert_series_equal(idx.value_counts(normalize=True), exp)
 ```
-Esse teste ja busca testar um outro metodo da classe Series, o metodo 'value_counts'. Esse teste especifico deseja testar esse metodo para series com valores do tipo Timestamp. Primeiro se testa se o metodo retorna o valor esperado aplicando ele a aos valores de uma serie. Em seguida se aplica o mesmo metodo a uma serie de indices. E por fim, se testa se o metodo retorna o valor esperado quando o parametro normalize é passado como True.
+Esse teste já busca testar um outro método da classe Series, o método 'value_counts'. Esse teste específico deseja testar esse método para séries com valores do tipo Timestamp. Primeiro se testa se o método retorna o valor esperado aplicando ele a aos valores de uma série. Em seguida se aplica o mesmo método a uma série de índices. E por fim, se testa se o método retorna o valor esperado quando o parâmetro normalize é passado como True.
