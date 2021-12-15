@@ -1,6 +1,6 @@
 # Trabalho Pratico - Testes
 
-O repositorio escolhido para analisar os testes foi o da biblioteca python, <a href="https://github.com/pandas-dev/pandas">Pandas</a>
+O repositorio escolhido para analisar os testes foi o da biblioteca python, <a href="https://github.com/pandas-dev/pandas">Pandas</a>.
 
 ## 1. Series.fillna
 - <a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.fillna.html">Referencia</a>
