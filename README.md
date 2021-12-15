@@ -29,7 +29,7 @@ def test_fillna(self):
 Esse teste pretende fazer testes de comportamento no metodo fillna da classe Series. Primeiro, testa se os metodos "ffill" e "backfill" estão funcionando, respectivamente esse metodos substituem um valor invalido pelo primeiro valor valido anterior e pelo primeiro valor valido posterior. Em seguida, é testada a substituição por um valor especifico passado como parametro. E por fim, testa-se se o metodo levanta algum erro caso nenhum metodo ou valor seja passado.
 
 
-## 2.
+## 2. Series.fillna
 - <a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.fillna.html">Referencia</a>
 - <a href="https://github.com/pandas-dev/pandas/blob/7fbb8d146097ff1fa6a893b110b80876d971ebac/pandas/tests/series/methods/test_fillna.py#L192">Codigo</a>
 ```python
@@ -140,7 +140,7 @@ O primeiro teste é simples, objetivando verificar se o elemento nulo é trocado
 Em seguida os metodos ffill e bfill são testados, é esperado que o primeiro, no caso dado, não faça nada pois o valor invelido é o primeiro e o segundo preencha a posição invalida com o valor da proxima posição valida.
 
 
-## 3. 
+## 3. Series.value_counts
 - <a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.value_counts.html">Referencia</a>
 - <a href="https://github.com/pandas-dev/pandas/blob/eabac61caeebac4c3f125ca7aaddd3d08686f296/pandas/tests/series/methods/test_value_counts.py#L14">Codigo</a>
 ```python
@@ -171,4 +171,4 @@ def test_value_counts_datetime(self):
     tm.assert_series_equal(ser.value_counts(normalize=True), exp)
     tm.assert_series_equal(idx.value_counts(normalize=True), exp)
 ```
-Esse teste ja busca testar um outro metodo da classe Series, o metodo 'value_counts'. 
+Esse teste ja busca testar um outro metodo da classe Series, o metodo 'value_counts'. Esse teste especifico deseja testar esse metodo para series com valores do tipo Timestamp. Primeiro se testa se o metodo retorna o valor esperado aplicando ele a aos valores de uma serie. Em seguida se aplica o mesmo metodo a uma serie de indices. E por fim, se testa se o metodo retorna o valor esperado quando o parametro normalize é passado como True.
